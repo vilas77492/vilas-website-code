@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-barlow), 'Barlow Condensed', ui-sans-serif, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-deep: var(--surface-deep);
+  --color-dim: var(--dim);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: dark;
+  --radius: 0rem;
+
+  /* Technoholic palette: deep violet-black, cyan accent */
+  --background: #0d0814;
+  --foreground: #ede8f5;
+  --surface: #160e22;
+  --surface-deep: #100a1a;
+  --card: #160e22;
+  --card-foreground: #ede8f5;
+  --popover: #160e22;
+  --popover-foreground: #ede8f5;
+  --primary: #00d4e8;
+  --primary-foreground: #0d0814;
+  --secondary: #2d1e45;
+  --secondary-foreground: #ede8f5;
+  --muted: #1c1230;
+  --muted-foreground: #b0a8c0;
+  --dim: #7a6d8d;
+  --accent: #00d4e8;
+  --accent-foreground: #0d0814;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #2d1e45;
+  --input: #100a1a;
+  --ring: #00d4e8;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@utility grid-overlay {
+  background-image:
+    linear-gradient(to right, rgb(45 30 69 / 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(45 30 69 / 0.35) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
